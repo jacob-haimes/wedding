@@ -4,19 +4,25 @@
 ## Docs: https://gohugo.io/hugo-modules/
 ############################
 
+noVendor: "github.com/HugoBlox/hugo-blox-builder/**"
+private: "github.com/HugoBlox/all-access/blox-all-access"
+
 imports:
-  - path: github.com/HugoBlox/kit/modules/blox
+  - path: github.com/HugoBlox/kit/modules/integrations/netlify
+  - path: github.com/HugoBlox/hugo-blox-builder/modules/blox-tailwind
+  - path: github.com/HugoBlox/all-access/blox-all-access
 
 # Install any Hugo Blox within the `hugo-blox/blox/` folder
 mounts:
   - source: hugo-blox/blox/community
-    target: layouts/_partials/blox/community/
-    files:
-      - "**.html"
+    target: layouts/partials/blox/community/
+    files: '**.html'
+  - source: hugo-blox/blox/all-access
+    target: layouts/partials/blox/
+    files: '**.html'
   - source: hugo-blox/blox
     target: assets/dist/community/blox/
-    files:
-      - "**.css"
+    files: '**.css'
   - source: layouts
     target: layouts
   - source: assets

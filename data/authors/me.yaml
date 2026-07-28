@@ -1,8 +1,8 @@
 schema: hugoblox/author/v1
-slug: me
+slug: author
 is_owner: true
 name:
-  display: Your Name
+  display: Jacob Haimes
 role: ''
 bio: ''
 
@@ -11,10 +11,6 @@ affiliations:
     url: ''
 
 links:
-  - icon: at-symbol
-    url: mailto:hello@example.com
-    label: Email
-  - icon: brands/github
-    url: https://github.com/
-  - icon: brands/linkedin
-    url: https://www.linkedin.com/
+  # - icon: at-symbol
+  #   url:
+  #   label: Email

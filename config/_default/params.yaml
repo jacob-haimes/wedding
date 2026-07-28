@@ -1,91 +1,79 @@
-# ══════════════════════════════════════════════════════════════════════════════
-# HUGOBLOX CONFIGURATION
-# Schema: hugoblox.com/schema/v2
+# SITE SETUP
+# Guide: https://docs.hugoblox.com/tutorial/
 # Documentation: https://docs.hugoblox.com/
-# ══════════════════════════════════════════════════════════════════════════════
-hugoblox:
-  schema: "2.0"
+# This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
-  # ────────────────────────────────────────────────────────────────────────────
-  # IDENTITY
-  # ────────────────────────────────────────────────────────────────────────────
-  identity:
-    name: "HugoBlox Starter"
-    organization: ""
-    type: person # person | organization | local_business
-    tagline: ""
-    description: ""
-    social:
-      twitter: ""
+# Appearance
+appearance:
+  mode: light
+  color: wedding
 
-  # ────────────────────────────────────────────────────────────────────────────
-  # THEME
-  # ────────────────────────────────────────────────────────────────────────────
-  theme:
-    mode: system # light | dark | system
-    pack: "default"
-    colors:
-      primary: ""
-      secondary: ""
-      neutral: ""
+# SEO
+marketing:
+  seo:
+    site_type: Personal
+    local_business_type: ''
+    org_name: ''
+    description: 'Wedding website for Leah Selman and Jacob Haimes.'
+    twitter: ''
+  analytics:
+    google_analytics: ''
+    baidu_tongji: ''
+    plausible: ''
+    fathom: ''
+    pirsch: ''
+  verification:
+    google: ''
+    baidu: ''
 
-  # ────────────────────────────────────────────────────────────────────────────
-  # TYPOGRAPHY
-  # ────────────────────────────────────────────────────────────────────────────
-  typography:
-    pack: "system"
-
-  # ────────────────────────────────────────────────────────────────────────────
-  # LAYOUT
-  # ────────────────────────────────────────────────────────────────────────────
-  layout:
-    radius: "md" # none | sm | md | lg | full
-    spacing: "spacious" # compact | comfortable | spacious
-    avatar_shape: circle # circle | square | rounded
-
-  # ────────────────────────────────────────────────────────────────────────────
-  # HEADER
-  # ────────────────────────────────────────────────────────────────────────────
-  header:
+# Site header
+header:
+  navbar:
     enable: true
-    style: navbar # navbar | navbar-simple | minimal
-    sticky: true
-    align: center # left | center | right
-    search: false
-    theme_toggle: true
+    blox: "navbar"
+    align: "center"
+    fixed_to_top: false
+    logo:
+      text: ""
+      # Logo filename in `assets/media/` folder
+      filename: "logo.svg"
+    # button:
+    #   enable: true
+    #   text: "RSVP"
+    #   url: "GOOGLE FORM LINK"
+    show_search: false
+    show_theme_chooser: false
 
-  # ────────────────────────────────────────────────────────────────────────────
-  # FOOTER
-  # ────────────────────────────────────────────────────────────────────────────
-  footer:
-    style: minimal # minimal | columns | centered
-
-  # ────────────────────────────────────────────────────────────────────────────
-  # COPYRIGHT
-  # ────────────────────────────────────────────────────────────────────────────
-  copyright:
-    notice: "© {year} {name}"
-
-  # ────────────────────────────────────────────────────────────────────────────
-  # CONTENT
-  # ────────────────────────────────────────────────────────────────────────────
+# Site footer
+footer:
+  blox: "sitemap"
   content:
-    math:
-      enable: false
-    toc:
-      enable: true
-    reading_time:
-      enable: true
+    logo:
+      text: "LEAH SELMAN AND JACOB HAIMES"
+    tagline: "TAG, YOU'RE IT"
+  design:
+    columns: 4
+  copyright:
+    # notice: '© {year}'
 
-  # ────────────────────────────────────────────────────────────────────────────
-  # SEARCH
-  # ────────────────────────────────────────────────────────────────────────────
-  search:
-    enable: false
+# Localization
+locale:
+  date_format: 'Jan 2, 2006'
+  time_format: '3:04 PM'
 
-  # ────────────────────────────────────────────────────────────────────────────
-  # LOCALE
-  # ────────────────────────────────────────────────────────────────────────────
-  locale:
-    date_format: "Jan 2, 2006"
-    time_format: "3:04 PM"
+# Extensions
+extensions:
+  convertkit:
+    # To use the ConvertKit Newsletter blox, provide your public API Key from your ConvertKit account settings page
+    api_key: ""
+
+# Security
+hugoblox:
+  security:
+    csp:
+      policy: ""
+      report_only: false
+    frame_options: allow                 # deny | sameorigin | allow - allow enables iframe embedding
+    permissions_policy: ""
+
+i_am_a_sponsor: true

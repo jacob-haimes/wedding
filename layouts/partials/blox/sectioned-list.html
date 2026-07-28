@@ -1,0 +1,31 @@
+{{/* Custom block: Sectioned List — generic grouped-cards layout */}}
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+
+<div class="container mx-auto max-w-prose px-6">
+
+  {{ with $block.content.title }}
+  <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">{{ . | markdownify }}</h2>
+  {{ end }}
+
+  {{ with $block.content.text }}
+  <div class="prose prose-slate dark:prose-invert max-w-prose mb-8">{{ . | markdownify }}</div>
+  {{ end }}
+
+  {{ range $block.content.sections }}
+  <div class="mb-8">
+    {{ with .title }}
+    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">{{ . | markdownify }}</h3>
+    {{ end }}
+    <div class="flex flex-col gap-3">
+      {{ range .items }}
+      <div class="rounded-lg bg-neutral-50 dark:bg-neutral-800 p-4">
+        {{ with .title }}<div class="font-semibold mb-1 prose prose-slate dark:prose-invert max-w-none">{{ . | markdownify }}</div>{{ end }}
+        {{ with .text }}<div class="text-sm text-neutral-600 dark:text-neutral-300 prose prose-slate dark:prose-invert max-w-none">{{ . | markdownify }}</div>{{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+
+</div>

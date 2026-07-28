@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home | Leah and Jacob&#39;s Super Cool Wedding Website</title>
+    <link>http://localhost:1313/</link>
+      <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <description>Home</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sat, 18 Jul 2026 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://localhost:1313/media/logo.svg</url>
+      <title>Home</title>
+      <link>http://localhost:1313/</link>
+    </image>
+    
+    <item>
+      <title>Frequently Asked Questions</title>
+      <link>http://localhost:1313/faq/</link>
+      <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/faq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Registry</title>
+      <link>http://localhost:1313/registry/</link>
+      <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/registry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Schedule</title>
+      <link>http://localhost:1313/schedule/</link>
+      <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/schedule/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Travel and Accommodations</title>
+      <link>http://localhost:1313/travel-and-accommodations/</link>
+      <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/travel-and-accommodations/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

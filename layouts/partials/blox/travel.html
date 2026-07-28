@@ -1,0 +1,45 @@
+{{/* Custom block: Travel & Lodging */}}
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+
+<div class="container mx-auto max-w-prose px-6">
+
+  {{ with $block.content.title }}
+  <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">{{ . | markdownify }}</h2>
+  {{ end }}
+
+  {{ with $block.content.text }}
+  <div class="prose prose-slate dark:prose-invert max-w-prose mb-8">{{ . | markdownify }}</div>
+  {{ end }}
+
+  {{/* Getting Here */}}
+  {{ with $block.content.getting_here }}
+  <div class="mb-8">
+    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Getting Here</h3>
+    <div class="flex flex-col gap-3">
+      {{ range . }}
+      <div class="rounded-lg bg-neutral-50 dark:bg-neutral-800 p-4">
+        {{ with .title }}<div class="font-semibold mb-1">{{ . | markdownify }}</div>{{ end }}
+        {{ with .text }}<div class="prose prose-slate dark:prose-invert max-w-none">{{ . | markdownify }}</div>{{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+
+  {{/* Where to Stay */}}
+  {{ with $block.content.lodging }}
+  <div>
+    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Where to Stay</h3>
+    <div class="flex flex-col gap-3">
+      {{ range . }}
+      <div class="rounded-lg bg-neutral-50 dark:bg-neutral-800 p-4">
+        {{ with .name }}<div class="font-semibold mb-1">{{ . | markdownify }}</div>{{ end }}
+        {{ with .note }}<div class="text-sm text-neutral-600 dark:text-neutral-300 prose prose-slate dark:prose-invert max-w-none">{{ . | markdownify }}</div>{{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+
+</div>

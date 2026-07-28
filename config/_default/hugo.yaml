@@ -1,9 +1,10 @@
 # Configuration of Hugo
-# Guide: https://docs.hugoblox.com/
-# Hugo Documentation: https://gohugo.io/getting-started/configuration/
+# Guide: https://docs.hugoblox.com/tutorial/
+# Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
+# This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
-title: ''
-baseURL: 'https://example.com/'
+title: "Leah and Jacob's Super Cool Wedding Website" # Website name
+baseURL: 'https://example.com/' # Website URL
 
 ############################
 ## LANGUAGE
@@ -13,83 +14,6 @@ defaultContentLanguage: en
 hasCJKLanguage: false
 defaultContentLanguageInSubdir: false
 removePathAccents: true
-
-############################
-## PAGE OPTIONS
-############################
-
-cascade:
-  # Blog posts
-  - target:
-      path: /blog/**
-      kind: page
-    pager: true
-    show_date: true
-    show_date_updated: true
-    reading_time: true
-    commentable: true
-    show_related: true
-    share: true
-    show_breadcrumb: false
-
-  # Publications
-  - target:
-      path: /publications/**
-      kind: page
-    show_date: true
-    share: true
-    pager: true
-
-  # Events
-  - target:
-      path: /events/**
-      kind: page
-    show_date: true
-    share: true
-    pager: true
-
-  # Projects
-  - target:
-      path: /projects/**
-      kind: page
-    show_date: false
-    share: true
-
-  # Datasets
-  - target:
-      path: /datasets/**
-      kind: page
-    show_date: true
-    share: true
-
-  # Case Studies
-  - target:
-      path: /case-studies/**
-      kind: page
-    show_date: true
-    share: true
-
-  # Changelog
-  - target:
-      path: /changelog/**
-      kind: page
-    show_date: true
-    pager: false
-
-  # Courses
-  - target:
-      path: /courses/**
-      kind: page
-    show_breadcrumb: true
-    pager: true
-
-############################
-## OUTPUTS
-############################
-
-outputs:
-  home: [HTML, RSS, backlinks]
-  section: [HTML, RSS]
 
 ############################
 ## ADVANCED
@@ -104,29 +28,35 @@ pagination:
 enableEmoji: true
 enableRobotsTXT: true
 footnotereturnlinkcontents: <sup>^</sup>
-ignoreFiles: [".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
+ignoreFiles: [\.ipynb$, .ipynb_checkpoints$, \.Rmd$, \.Rmarkdown$, _cache$]
+permalinks:
+  authors: '/author/:slug/'
+  tags: '/tag/:slug/'
+  categories: '/category/:slug/'
 disableAliases: true
+outputs:
+  home: [HTML, RSS, headers, redirects]
+  section: [HTML, RSS]
 imaging:
   resampleFilter: lanczos
-  quality: 90
+  quality: 95
   anchor: smart
-  hint: picture
 timeout: 600000
 taxonomies:
-  author: authors
   tag: tags
   category: categories
+  author: authors
 markup:
   _merge: deep
-related:
-  threshold: 80
-  includeNewer: true
-  toLower: true
-  indices:
-    - name: tags
-      weight: 100
-    - name: categories
-      weight: 70
+  highlight:
+    lineNos: false
+  goldmark:
+    renderHooks:
+      _merge: none
+      link:
+        useEmbedded: fallback
+    renderer:
+      unsafe: true
 security:
   _merge: deep
 sitemap:
