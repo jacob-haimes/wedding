@@ -1,4 +1,4 @@
-/* Hugo Blox color theme: ORANGE */
+/* Hugo Blox color theme: WEDDING PURPLE */
 :root {
     --color-primary-50: 243 239 245;
     --color-primary-100: 234 226 237;
@@ -11,4 +11,5 @@
     --color-primary-800: 75 39 88;
     --color-primary-900: 48 12 61;
     --color-primary-950: 31 8 40;
+    --color-accent-50: 8 94 89;
 }

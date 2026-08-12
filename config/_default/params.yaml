@@ -5,7 +5,7 @@
 
 # Appearance
 appearance:
-  mode: light
+  mode: dark
   color: wedding
 
 # SEO
@@ -50,7 +50,7 @@ footer:
   content:
     logo:
       text: "LEAH SELMAN AND JACOB HAIMES"
-    tagline: "TAG, YOU'RE IT"
+    tagline: "WEDDING MOMENT"
   design:
     columns: 4
   copyright:

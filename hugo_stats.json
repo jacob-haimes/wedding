@@ -1,6 +1,7 @@
 {
   "htmlElements": {
     "tags": [
+      "?xml",
       "a",
       "article",
       "body",
@@ -11,13 +12,13 @@
       "dl",
       "dt",
       "footer",
-      "g",
       "h1",
       "h2",
       "h3",
       "head",
       "header",
       "html",
+      "image",
       "img",
       "input",
       "label",
@@ -28,6 +29,7 @@
       "p",
       "path",
       "polygon",
+      "rect",
       "script",
       "section",
       "span",
@@ -42,15 +44,16 @@
       "thead",
       "title",
       "tr",
-      "ul"
+      "ul",
+      "use"
     ],
     "classes": [
       "!mb-4",
       "-mr-1",
       "active",
       "active:text-white/70",
+      "bg-accent-50",
       "bg-gray-100",
-      "bg-gray-50",
       "bg-image",
       "bg-neutral-50",
       "bg-primary-500",
@@ -278,6 +281,7 @@
       "xl:space-x-8"
     ],
     "ids": [
+      "Number",
       "about",
       "countdown",
       "faq",

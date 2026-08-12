@@ -28,7 +28,7 @@ sections:
           image: view-b.jpg
     design:
       # Section background color (CSS class)
-      css_class: "bg-gray-100 dark:bg-gray-900"
+      css_class: "bg-accent-50 dark:bg-gray-900"
       no_padding: true
       spacing:
         padding: [4rem, 0, 2rem, 0]
