@@ -4,5 +4,4 @@
 
 # Default language
 en:
-  params:
-    locale: en-us
+  locale: en-us
