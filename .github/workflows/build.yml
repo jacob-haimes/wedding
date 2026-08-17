@@ -4,18 +4,23 @@ env:
   NODE_VERSION: '22'
 
 on:
+  # Standalone trigger for PR validation
   pull_request:
     branches: ['main']
+  # Reusable workflow trigger - called by deploy.yml
   workflow_call:
     outputs:
       artifact-id:
         description: 'The ID of the uploaded artifact'
         value: ${{ jobs.build.outputs.artifact-id }}
+  # Allow manual trigger for testing
   workflow_dispatch:
 
+# Read-only permissions for security
 permissions:
   contents: read
 
+# Prevent duplicate builds for the same PR
 concurrency:
   group: build-${{ github.head_ref || github.run_id }}
   cancel-in-progress: true
@@ -31,6 +36,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v6
       with:
+        # Fetch history for Hugo's .GitInfo and .Lastmod
         fetch-depth: 0
 
     - name: Setup Node.js
@@ -45,6 +51,7 @@ jobs:
     - name: Get Hugo Version
       id: hugo-version
       run: |
+        # Install pinned yq version for robust YAML parsing
         YQ_VERSION="v4.44.1"
         if ! wget -q --tries=3 --waitretry=1 -O /tmp/yq \
           "https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_amd64"; then
@@ -54,11 +61,14 @@ jobs:
         sudo mv /tmp/yq /usr/local/bin/yq
         sudo chmod +x /usr/local/bin/yq
 
+        # Read hugo_version from hugoblox.yaml
         VERSION=$(yq '.build.hugo_version // ""' hugoblox.yaml 2>/dev/null | grep -v '^null$' || true)
 
+        # Fallback to a known stable version if not specified
         DEFAULT_VERSION="0.161.1"
         VERSION=${VERSION:-$DEFAULT_VERSION}
 
+        # Validate version format (basic check)
         if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
           echo "::warning::Invalid hugo_version format '$VERSION', using default $DEFAULT_VERSION"
           VERSION="$DEFAULT_VERSION"
@@ -69,6 +79,7 @@ jobs:
 
     - name: Install dependencies
       run: |
+        # Install Tailwind CLI if package.json exists
         if [ -f "package.json" ]; then
           echo "Installing Tailwind dependencies..."
           pnpm install --no-frozen-lockfile || npm install
@@ -90,15 +101,11 @@ jobs:
         hugo-version: ${{ env.HUGO_VERSION }}
         extended: true
 
-    - name: Setup Go
-      uses: actions/setup-go@v5
-      with:
-        go-version: '1.21'
-
+    # Cache dependencies (Go modules, node_modules) - stable, rarely changes
     - uses: actions/cache@v5
       with:
         path: |
-          /home/runner/.cache/hugo_cache
+          /tmp/hugo_cache_runner/
           node_modules/
           modules/*/node_modules/
         key: ${{ runner.os }}-hugo-deps-${{ hashFiles('**/go.mod', '**/package-lock.json',
@@ -106,6 +113,7 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-hugo-deps-
 
+    # Cache Hugo resources (processed images, CSS) - invalidates only when assets/config change
     - uses: actions/cache@v5
       with:
         path: resources/
@@ -128,6 +136,7 @@ jobs:
 
     - name: Generate Pagefind search index (if applicable)
       run: |
+        # Check if site uses Pagefind search
         if [ -f "package.json" ] && grep -q "pagefind" package.json; then
           pnpm run pagefind || npx pagefind --site "public" 2>/dev/null || true
         fi
