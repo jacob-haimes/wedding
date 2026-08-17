@@ -13,3 +13,5 @@
     --color-primary-950: 31 8 40;
     --color-accent-50: 8 94 89;
 }
+
+.bg-accent-50  { background-color: rgb(var(--color-accent-50)); }

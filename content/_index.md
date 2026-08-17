@@ -63,7 +63,7 @@ sections:
           image: chautauqua.jpg
     design:
       # Section background color (CSS class)
-      css_class: "bg-gray-100 dark:bg-gray-900"
+      css_class: "bg-gray-300 dark:bg-gray-900"
   # - block: people
   #   id: speakers
   #   content:
