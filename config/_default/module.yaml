@@ -8,7 +8,6 @@ noVendor: "github.com/HugoBlox/hugo-blox-builder/**"
 private: "github.com/HugoBlox/all-access/blox-all-access"
 
 imports:
-  - path: github.com/HugoBlox/kit/modules/integrations/netlify
   - path: github.com/HugoBlox/hugo-blox-builder/modules/blox-tailwind
   - path: github.com/HugoBlox/all-access/blox-all-access
 
