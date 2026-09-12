@@ -7,7 +7,7 @@ main:
   - name: Home
     url: /
     weight: 10
-  - name: Schedule
+  - name: Schedule & Map
     url: /schedule
     weight: 20
   - name: Travel & Accommodations

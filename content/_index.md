@@ -49,7 +49,7 @@ sections:
       # Reduce spacing
       spacing:
         padding: ["1rem", 0, "1rem", 0]
-  - block: cta-image-paragraph
+  - block: cta-image-paragraph-2
     id: about
     content:
       items:
@@ -63,7 +63,7 @@ sections:
           image: chautauqua.jpg
     design:
       # Section background color (CSS class)
-      css_class: "bg-gray-300 dark:bg-gray-900"
+      css_class: "bg-gray-300 dark:bg-gray-900 text-gray-900"
   # - block: people
   #   id: speakers
   #   content:

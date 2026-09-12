@@ -21,9 +21,20 @@ sections:
         {style="padding-top: 2rem"}
 
         {{< table path="schedule_sunday.csv" header="true" >}}
+        
+        <img src="Chautauqua_Map_2025-01-1280x1656.png"
+         alt="Chautauqua Map"
+         style="padding-top: 3rem">
     design:
       no_padding: true
       spacing:
         padding: [4rem, 0, 2rem, 0]
         margin: [0, 0, 0, 0]
 ---
+
+
+<figure>
+    <img src="/assets/media/images/Chautauqua_Map_2025-01-1280x1656.png"
+         alt="Chautauqua Map">
+    <figcaption style="font-size:small">Chautauqua Map</figcaption>
+</figure>
