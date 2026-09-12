@@ -9,7 +9,7 @@ design:
   spacing: "6rem"
 
 sections:
-  - block: cta-image-paragraph
+  - block: cta-image-paragraph-2
     id: about
     content:
       items:
@@ -19,11 +19,11 @@ sections:
             text: Gifts
             url: https://www.crateandbarrel.com/gift-registry/leah-selman-and-jacob-haimes/r7537871
           image: view-d.jpg
-        - title: OR... MONEY
-          text: :)
+        - title: OR... 
+          text: Contribute to our honeymoon / house fund
           button:
             text: Money Button
-            url: https://www.patreon.com/c/Kairosfm
+            url: http://travelersjoy.com/leahandjacobwedding/
           # Upload image to `assets/media/` and reference the filename here
           image: view-b.jpg
     design:

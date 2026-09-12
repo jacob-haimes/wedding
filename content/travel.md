@@ -23,7 +23,7 @@ sections:
               text: |
                 * Take the RTD bus, it has a station at the airport!
                   * Routes [AB1, AB2, and AB3](https://app.rtd-denver.com/route/AB1/schedule?serviceType=1&direction=Eastbound&branch=AB) will all get you to Boulder. 
-                  * Fair is $10, buy tickets on the platform or through the [RTD MyRide](https://www.rtd-denver.com/fares-passes/myride) app
+                  * Fare is $10, buy tickets on the platform or through the [RTD MyRide](https://www.rtd-denver.com/fares-passes/myride) app
                   * Buses depart every ~60 minutes, and the ride takes ~75 minutes end-to-end
                 * All the normal options work too: ride share, renting a car, guilting a friend, etc.
         - title: "Where to Stay"
