@@ -13,12 +13,16 @@ main:
   - name: Travel & Accommodations
     url: /travel-and-accommodations
     weight: 30
+  - name: Things to Do
+    url: /things-to-do
+    weight: 40
   - name: Registry
     url: /registry
-    weight: 40
+    weight: 50
   - name: FAQ
     url: /faq
-    weight: 50
+    weight: 60
+
 
 # footer:
 #   - identifier: home

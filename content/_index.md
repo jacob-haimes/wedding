@@ -35,6 +35,7 @@ sections:
         image:
           # Add your image background to `assets/media/`.
           filename: "view-d10.jpg"
+          # parallax: false
           filters:
             brightness: 1.0
   - block: countdown

@@ -1,0 +1,9 @@
+/* Disable fixed-parallax background on small screens — iOS/mobile
+   browsers render background-attachment: fixed poorly, causing the
+   zoomed/misplaced image seen on the hero section. Re-enables the
+   vendor's own commented-out mobile fix from blox-tailwind's main.css. */
+@media (max-width: 767px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
