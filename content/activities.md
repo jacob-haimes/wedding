@@ -18,7 +18,7 @@ sections:
             - title: "Couple Favorites"
               text: |
                 * Leah: The Boulder Dushanbe Teahouse
-                * Jacob: ???
+                * Jacob: Pasta Press
             - title: "Our Top Picks"
               text: |
                 * Tacos: Bartaco
@@ -27,7 +27,7 @@ sections:
                 * Asian: Asian Cuisine and Vietnamese Noodle House (technically in Superior)
                 * Happy Hour: Postino
                 * Breakfast: The Buff Restaurant
-                * Honorable Mentions: Gondolier, Pasta Jay's
+                * Honorable Mentions: Gondolier, Pasta Jay's, Foolish Craig's, Avanti
         - title: "Other Stuff"
           items:
             - title: "Pearl Street Mall"
