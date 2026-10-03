@@ -40,7 +40,7 @@ sections:
         {{< /faq-item >}}
 
         {{< faq-item text="Where do I park?" >}}
-        Parking is free, but limited. You can park in the Academic Hall parking lot, the dirt lot next to the picnic shelter, or any available street parking in Chautauqua. [Include map]
+        Parking is free, but limited. You can park in the Academic Hall parking lot, the dirt lot next to the picnic shelter, or any available street parking in Chautauqua.
         {{< /faq-item >}}
 
         {{< faq-item text="Is everything wheelchair accessible?" >}}
